@@ -3,7 +3,8 @@ class LogsController < ApplicationController
   before_action :authenticate
 
   def create
-    render  json: params.to_json
+    puts params
+    head :ok
   end
 
   private
