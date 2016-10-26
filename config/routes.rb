@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/logs', to: 'logs#index', as: :logs
+  post '/logs', to: 'logs#create', as: :logs
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
