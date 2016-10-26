@@ -10,12 +10,16 @@ class LogsController < ApplicationController
 
 
   def authenticate
-    if authenticate_with_http_basic { |user, pass| user == 'user' && pass == 'password' }
+    if authenticate_with_http_basic { |user, pass| user == 'user' && pass == 'secret' }
       return true
     else
       render_unauthorized
     end
   end
+
+  # heroku drains:add https://user:pass@mylogdrain.herokuapp.com/logs -a myapp
+  # heroku drains:add https://user:secret@allocatorlogs.herokuapp.com/logs -a staging-hedgepo
+
 
   def render_unauthorized
     self.headers['WWW-Authenticate'] = 'Basic realm="Application"'
