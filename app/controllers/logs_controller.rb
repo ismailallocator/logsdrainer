@@ -5,7 +5,6 @@ class LogsController < ApplicationController
   def create
     puts "*****************************"
     puts request.env['HTTP_LOGPLEX_DRAIN_TOKEN']
-    puts request.inspect
     puts request.body.read
     puts "+++++++++++++++++++++++++++++"
     head :ok
