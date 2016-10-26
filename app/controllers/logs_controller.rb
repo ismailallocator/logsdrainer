@@ -3,7 +3,10 @@ class LogsController < ApplicationController
   before_action :authenticate
 
   def create
+    puts "*****************************"
     puts request.env['HTTP_LOGPLEX_DRAIN_TOKEN']
+    puts request
+    puts "+++++++++++++++++++++++++++++"
     head :ok
   end
 
